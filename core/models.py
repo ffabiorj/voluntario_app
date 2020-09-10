@@ -11,7 +11,7 @@ class Voluntario(models.Model):
         return self.nome
 
 
-class Acoes(models.Model):
+class Acao(models.Model):
     nome_acao = models.CharField(max_length=100, blank=False, null=False)
     instituicao = models.CharField(max_length=100, blank=False, null=False)
     local = models.CharField(max_length=100, blank=False, null=False)

@@ -1,5 +1,5 @@
-from core.models import Voluntario, Acoes
-from core.serializers import VoluntarioSerializer, AcoesSerializer
+from core.models import Voluntario, Acao
+from core.serializers import VoluntarioSerializer, AcaoSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
@@ -55,19 +55,19 @@ class VoluntarioDetalhe(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class AcoesLista(APIView):
+class AcaoLista(APIView):
     """
     Uma simples viewset para listar todas ações
     ou criar uma nova.
     """
 
     def get(self, request, format=None):
-        queryset = Acoes.objects.all()
-        serializer = AcoesSerializer(queryset, many=True)
+        queryset = Acao.objects.all()
+        serializer = AcaoSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, format=None):
-        serializer = AcoesSerializer(data=request.data)
+        serializer = AcaoSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -81,18 +81,18 @@ class AcaoDetalhe(APIView):
 
     def get_object(self, pk):
         try:
-            return Acoes.objects.get(pk=pk)
-        except Acoes.DoesNotExist:
+            return Acao.objects.get(pk=pk)
+        except Acao.DoesNotExist:
             raise Http404
 
     def get(self, request, pk, format=None):
         acao = self.get_object(pk)
-        serializer = AcoesSerializer(acao)
+        serializer = AcaoSerializer(acao)
         return Response(serializer.data)
 
     def put(self, request, pk, format=None):
         acao = self.get_object(pk)
-        serializer = AcoesSerializer(acao, data=request.data)
+        serializer = AcaoSerializer(acao, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

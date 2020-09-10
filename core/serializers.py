@@ -1,14 +1,16 @@
 from rest_framework import serializers
-from core.models import Voluntario, Acoes
+from core.models import Voluntario, Acao
 
 
 class VoluntarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Voluntario
-        exclude = []
+        fields = ["nome", "sobrenome", "bairro", "cidade"]
 
 
-class AcoesSerializer(serializers.ModelSerializer):
+class AcaoSerializer(serializers.ModelSerializer):
+    voluntario = VoluntarioSerializer(many=True, read_only=True)
+
     class Meta:
-        model = Acoes
-        exclude = []
+        model = Acao
+        fields = ["nome_acao", "instituicao", "local", "descricao", "voluntario"]
