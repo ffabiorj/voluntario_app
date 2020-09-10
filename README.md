@@ -2,7 +2,7 @@
 
 [![codecov](https://codecov.io/gh/ffabiorj/desafio_vendas/branch/master/graph/badge.svg)](https://codecov.io/gh/ffabiorj/voluntario_app)
 
-# Api de vendas
+# Api de voluntários
 
 Criação de uma api de voluntários
 
