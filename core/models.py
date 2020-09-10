@@ -16,6 +16,7 @@ class Acoes(models.Model):
     instituicao = models.CharField(max_length=100, blank=False, null=False)
     local = models.CharField(max_length=100, blank=False, null=False)
     descricao = models.CharField(max_length=255, blank=False, null=False)
+    voluntario = models.ForeignKey(Voluntario, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nome_acao
