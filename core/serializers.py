@@ -9,8 +9,8 @@ class VoluntarioSerializer(serializers.ModelSerializer):
 
 
 class AcaoSerializer(serializers.ModelSerializer):
-    voluntario = VoluntarioSerializer(many=True, read_only=True)
+    voluntarios = serializers.StringRelatedField(many=True, read_only=True)
 
     class Meta:
         model = Acao
-        fields = ["nome_acao", "instituicao", "local", "descricao", "voluntario"]
+        fields = ["nome_acao", "instituicao", "local", "descricao", "voluntarios"]
