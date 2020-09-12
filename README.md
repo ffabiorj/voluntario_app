@@ -53,10 +53,32 @@ Criação de uma api de voluntários
 
 ## Endpoints da api
 
-- http://127.0.0.1:8000/api/v1/voluntario/ # Retorna todas voluntario ou cria uma.
-- http://127.0.0.1:8000/api/v1/voluntario/id/ # Retorna, delete o update um voluntário.
+Obs.: Crie primeiro uma acão, para depois criar um voluntario passando o id da ação do mesmo.
+
+- Exemplo de dados para endpoints
+
+```
+Dados para ação
+{
+    "nome_acao": "Doacoes",
+    "instituicao": "Bradesco",
+    "local": "Rio de Janeiro",
+    "descricao": "Doar comida",
+}
+Dados para voluntário
+{
+    "nome": "Fabio",
+    "sobrenome": "Oliveira",
+    "bairro": "Realengo",
+    "cidade": "Rio de Janeiro",
+    "acao": 1,
+}
+```
+
 - http://127.0.0.1:8000/api/v1/acao/ # Retorna todas ações ou cria uma.
 - http://127.0.0.1:8000/api/v1/acao/id/ # Retorna, delete o update uma acao.
+- http://127.0.0.1:8000/api/v1/voluntario/ # Retorna todas voluntario ou cria uma.
+- http://127.0.0.1:8000/api/v1/voluntario/id/ # Retorna, delete o update um voluntário.
 
 ### Rodar os testes
 
