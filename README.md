@@ -24,37 +24,39 @@ Criação de uma api de voluntários
 5. Instale as dependências.
 6. Crie um arquivo .env
 7. Rode as migrações
-8. Run the project
-9. Access the link
+8. Rode o projeto
+9. Acesse o link
 
 ```
-- git clone git@github.com:ffabiorj/desafio_vendas.git
-- cd desafio_vendas
+- git clone git@github.com:ffabiorj/voluntario_app.git
+- cd voluntario_app
 - python3 -m venv .venv
 - source .venv/bin/activate
 - pip install -r requirements-dev.txt
 - python contrib/env_gen.py
 - python manage.py migrate
 - python manage.py runserver
-- http://127.0.0.1:8000/api/v1/transacao/
+- http://127.0.0.1:8000/api/v1/acao/
 ```
 
 ### Com Docker e Docker Compose
 
-1. Crie um build do docker
-2. Roda o docker Compose
+1. Crie um arquivo .env
+2. Crie um build do docker
+3. Roda o docker Compose
 
 ```
- docker-compose build
- docker-compose up
+- python contrib/env_gen.py
+- docker-compose build
+- docker-compose up
 ```
 
 ## Endpoints da api
 
 - http://127.0.0.1:8000/api/v1/voluntario/ # Retorna todas voluntario ou cria uma.
 - http://127.0.0.1:8000/api/v1/voluntario/id/ # Retorna, delete o update um voluntário.
-- http://127.0.0.1:8000/api/v1/acoes/ # Retorna todas ações ou cria uma.
-- http://127.0.0.1:8000/api/v1/acoes/id/ # Retorna, delete o update um voluntário.
+- http://127.0.0.1:8000/api/v1/acao/ # Retorna todas ações ou cria uma.
+- http://127.0.0.1:8000/api/v1/acao/id/ # Retorna, delete o update uma acao.
 
 ### Rodar os testes
 
