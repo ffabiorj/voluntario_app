@@ -48,8 +48,10 @@ def test_retorna_um_voluntario(client, create_voluntario):
             "sobrenome": "Oliveira",
             "bairro": "Realengo",
             "cidade": "Rio de Janeiro",
+            "acao": 1
         }
     ]
+    print(response.data)    
     assert response.data == data
 
 
