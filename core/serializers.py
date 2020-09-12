@@ -5,7 +5,7 @@ from core.models import Voluntario, Acao
 class VoluntarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Voluntario
-        fields = ["nome", "sobrenome", "bairro", "cidade"]
+        fields = ["nome", "sobrenome", "bairro", "cidade", "acao"]
 
 
 class AcaoSerializer(serializers.ModelSerializer):
