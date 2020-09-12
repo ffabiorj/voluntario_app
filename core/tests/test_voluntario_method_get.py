@@ -44,6 +44,7 @@ def test_retorna_um_voluntario(client, create_voluntario):
     response = client.get(url)
     data = [
         {
+            "id": 1,
             "nome": "Fabio",
             "sobrenome": "Oliveira",
             "bairro": "Realengo",

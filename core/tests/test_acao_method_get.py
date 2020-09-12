@@ -44,6 +44,7 @@ def test_retorna_uma_acao(client, create_acao, create_voluntario):
     response = client.get(url)
     data = [
         {
+            "id": 1,
             "nome_acao": "Doacoes",
             "instituicao": "Bradesco",
             "local": "Rio de Janeiro",
